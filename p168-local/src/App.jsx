@@ -1,10 +1,22 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
+import AppLayout from './layout/AppLayout.jsx'
+import AboutPage from './pages/AboutPage.jsx'
+import HomePage from './pages/HomePage.jsx'
+import NotFoundPage from './pages/NotFoundPage.jsx'
+import ProjectsPage from './pages/ProjectsPage.jsx'
+
 function App() {
   return (
-    <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
-      <h1>p168</h1>
-      <p>This is my initial React deployment.</p>
-    </div>
-  );
+    <Routes>
+      <Route element={<AppLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="home" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
+  )
 }
 
-export default App;
+export default App

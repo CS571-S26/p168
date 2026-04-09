@@ -1,16 +1,44 @@
-# React + Vite
+# p168 (React + GitHub Pages)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a small multi-page React app built with **Vite**, **React Router**, and **React-Bootstrap**, deployed to **GitHub Pages**.
 
-Currently, two official plugins are available:
+## What changed (documentation)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Compared to the original “single page text” starter, this project now includes:
 
-## React Compiler
+- **React Router navigation** via `HashRouter` + `Routes`
+- **Primary navigation bar** (React-Bootstrap `Navbar`) with links to multiple pages
+- **Multiple pages**: Home, Projects, About, and a NotFound page
+- **Reusable components** used across pages:
+  - `SiteNav`
+  - `AppFooter`
+  - `PageHeader`
+  - `FeatureCard`
+  - `AppLayout`
+- **GitHub Pages-friendly routing**: `HashRouter` avoids refresh/deep-link 404 issues on GitHub Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Routes
 
-## Expanding the ESLint configuration
+- `#/` Home
+- `#/projects` Projects
+- `#/about` About
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Deploy to GitHub Pages
+
+This repo uses `gh-pages` to publish the `dist/` folder.
+
+```bash
+npm run deploy
+```
+
+Notes:
+
+- `vite.config.js` sets `base: '/p168/'` so assets resolve correctly on GitHub Pages.
+- The site is deployed under the GitHub Pages path from `homepage` in `package.json`.
