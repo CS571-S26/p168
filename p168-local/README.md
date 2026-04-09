@@ -32,11 +32,7 @@ npm run dev
 
 ## Deploy to GitHub Pages
 
-This repo uses `gh-pages` to publish the `dist/` folder.
-
-```bash
-npm run deploy
-```
+This repo deploys from `main` using a GitHub Actions workflow that builds `p168-local/dist` and publishes to GitHub Pages.
 
 Notes:
 
