@@ -8,22 +8,16 @@ const navLinkClassName = ({ isActive }) =>
 
 export default function SiteNav() {
   return (
-    <Navbar bg="dark" variant="dark" expand="md" sticky="top">
+    <Navbar bg="dark" variant="dark" expand="md" sticky="top" className="shadow-sm">
       <Container>
-        <Navbar.Brand as={NavLink} to="/">
-          p168
+        <Navbar.Brand as={NavLink} to="/" className="fw-bold fs-4 text-danger">
+          🍔 Campus Food Finder
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="primary-navbar" />
         <Navbar.Collapse id="primary-navbar">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <NavLink to="/" end className={navLinkClassName}>
               Home
-            </NavLink>
-            <NavLink to="/projects" className={navLinkClassName}>
-              Projects
-            </NavLink>
-            <NavLink to="/about" className={navLinkClassName}>
-              About
             </NavLink>
           </Nav>
         </Navbar.Collapse>

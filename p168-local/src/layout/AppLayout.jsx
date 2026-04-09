@@ -1,17 +1,18 @@
-import Container from 'react-bootstrap/Container'
 import { Outlet } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
 import AppFooter from '../shared/AppFooter.jsx'
 import SiteNav from '../shared/SiteNav.jsx'
 
 export default function AppLayout() {
   return (
-    <div className="min-vh-100 d-flex flex-column">
+    <div className="d-flex flex-column min-vh-100">
       <SiteNav />
-      <Container as="main" className="flex-grow-1 py-4">
-        <Outlet />
-      </Container>
+      <main className="flex-grow-1 bg-light">
+        <Container className="py-4">
+          <Outlet />
+        </Container>
+      </main>
       <AppFooter />
     </div>
   )
 }
-
