@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Button, Form, Card, Container, Row, Col, Badge } from 'react-bootstrap';
 import { restaurants } from '../data/restaurants.js';
 import { useAppContext } from '../context/AppProvider.jsx';
+import ReviewItem from '../shared/ReviewItem.jsx';
 
 export default function RestaurantPage() {
   const { id } = useParams();
@@ -94,15 +95,7 @@ export default function RestaurantPage() {
               ) : (
                 <div className="d-flex flex-column gap-3">
                   {restaurantReviews.map((rev) => (
-                    <div key={rev.id} className="p-3 bg-light rounded-3">
-                      <div className="d-flex justify-content-between mb-2">
-                        <span className="text-warning fs-5">
-                          {'★'.repeat(rev.rating)}{'☆'.repeat(5-rev.rating)}
-                        </span>
-                        <span className="text-muted small">{rev.date}</span>
-                      </div>
-                      <p className="mb-0 text-secondary">{rev.comment}</p>
-                    </div>
+                    <ReviewItem key={rev.id} review={rev} />
                   ))}
                 </div>
               )}

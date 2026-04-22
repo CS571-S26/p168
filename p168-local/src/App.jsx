@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import AppLayout from './layout/AppLayout.jsx'
 import HomePage from './pages/HomePage.jsx'
 import RestaurantPage from './pages/RestaurantPage.jsx'
+import FavoritesPage from './pages/FavoritesPage.jsx'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Route element={<AppLayout />}>
         <Route index element={<HomePage />} />
         <Route path="restaurant/:id" element={<RestaurantPage />} />
+        <Route path="favorites" element={<FavoritesPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
