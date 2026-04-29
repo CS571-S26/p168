@@ -17,7 +17,7 @@ export default function FavoritesPage() {
 
       {favoriteRestaurants.length === 0 ? (
         <div className="text-center mt-5 text-muted">
-          <h4>No favorites yet</h4>
+          <h2>No favorites yet</h2>
           <p>Go explore and save some restaurants to your favorites!</p>
         </div>
       ) : (

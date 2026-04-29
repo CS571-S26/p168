@@ -22,6 +22,9 @@ export default function SiteNav() {
             <NavLink to="/favorites" end className={navLinkClassName}>
               Favorites
             </NavLink>
+            <NavLink to="/about" end className={navLinkClassName}>
+              About
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

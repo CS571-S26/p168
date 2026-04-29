@@ -12,12 +12,14 @@ export default function RestaurantCard({ restaurant }) {
         <Card.Img 
           variant="top" 
           src={restaurant.image} 
+          alt={restaurant.name}
           style={{ objectFit: 'cover', height: '100%', width: '100%' }}
         />
         <Button 
           variant={isFav ? "danger" : "light"} 
           className="rounded-circle shadow"
           style={{ position: 'absolute', top: '10px', right: '10px', width: '40px', height: '40px', padding: 0 }}
+          aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();

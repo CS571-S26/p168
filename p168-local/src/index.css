@@ -1,7 +1,7 @@
 :root {
   --primary-color: #ff6b6b;
   --secondary-color: #4ecdc4;
-  --bg-color: #f7f9fc;
+  --bg-color: #eef2f5;
   --text-dark: #2d3436;
   --text-light: #636e72;
 }
@@ -18,11 +18,13 @@ body {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
+  background-color: #ffffff;
 }
 
 .food-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12) !important;
 }
 
 /* Smooth button transitions */

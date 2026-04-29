@@ -4,6 +4,7 @@ import { Button, Form, Card, Container, Row, Col, Badge } from 'react-bootstrap'
 import { restaurants } from '../data/restaurants.js';
 import { useAppContext } from '../context/AppProvider.jsx';
 import ReviewItem from '../shared/ReviewItem.jsx';
+import StarRating from '../shared/StarRating.jsx';
 
 export default function RestaurantPage() {
   const { id } = useParams();
@@ -62,7 +63,7 @@ export default function RestaurantPage() {
               <p className="text-muted fs-5 mb-0">📍 {restaurant.location}</p>
             </div>
             <div className="text-end">
-              <h3 className="text-success mb-2">{restaurant.priceRange}</h3>
+              <div className="text-success fs-3 fw-bold mb-2">{restaurant.priceRange}</div>
               <Button 
                 variant={isFav ? "danger" : "outline-danger"} 
                 onClick={() => toggleFavorite(restaurant.id)}
@@ -75,7 +76,7 @@ export default function RestaurantPage() {
           
           <hr className="my-4 text-muted opacity-25" />
           
-          <h4 className="fw-bold mb-3">About this place</h4>
+          <h2 className="fw-bold mb-3 h4">About this place</h2>
           <p className="fs-5 text-secondary" style={{ lineHeight: '1.8' }}>
             {restaurant.description}
           </p>
@@ -86,7 +87,7 @@ export default function RestaurantPage() {
         <Col md={7}>
           <Card className="border-0 shadow-sm h-100" style={{ borderRadius: '15px' }}>
             <Card.Body className="p-4">
-              <h4 className="fw-bold mb-4">Reviews & Comments</h4>
+              <h2 className="fw-bold mb-4 h4">Reviews & Comments</h2>
               
               {restaurantReviews.length === 0 ? (
                 <div className="text-center text-muted p-4 bg-light rounded-3">
@@ -106,28 +107,17 @@ export default function RestaurantPage() {
         <Col md={5}>
           <Card className="border-0 shadow-sm" style={{ borderRadius: '15px', backgroundColor: '#f8f9fa' }}>
             <Card.Body className="p-4">
-              <h4 className="fw-bold mb-4">Leave a Review</h4>
+              <h2 className="fw-bold mb-4 h4">Leave a Review</h2>
               <Form onSubmit={handleReviewSubmit}>
                 <Form.Group className="mb-3">
                   <Form.Label className="fw-bold text-secondary">Rating</Form.Label>
-                  <div className="d-flex gap-2">
-                    {[1, 2, 3, 4, 5].map(num => (
-                      <Button 
-                        key={num}
-                        type="button" 
-                        variant="link" 
-                        className="p-0 text-warning text-decoration-none fs-3"
-                        onClick={() => setRating(num)}
-                      >
-                        {num <= rating ? '★' : '☆'}
-                      </Button>
-                    ))}
-                  </div>
+                  <StarRating rating={rating} setRating={setRating} />
                 </Form.Group>
                 
                 <Form.Group className="mb-4">
-                  <Form.Label className="fw-bold text-secondary">Your Comment</Form.Label>
+                  <Form.Label htmlFor="review-comment" className="fw-bold text-secondary">Your Comment</Form.Label>
                   <Form.Control 
+                    id="review-comment"
                     as="textarea" 
                     rows={4} 
                     value={comment}

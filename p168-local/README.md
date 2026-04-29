@@ -1,24 +1,31 @@
-# Campus Food Finder - Milestone 2 Update
+# Campus Food Finder - Final Submission
 
 This project is a React-based web application for discovering campus food options.
 
-## What We Changed
-- **New Favorites Page:** Added a dedicated `FavoritesPage.jsx` where users can view all the restaurants they have saved.
-- **Added ReviewItem Component:** Extracted the review layout into a reusable `ReviewItem.jsx` component.
-- **Updated Navigation:** Modified the global `SiteNav.jsx` to include a functional link to the new Favorites page.
-- **Routing Update:** Added the new `/favorites` route within `App.jsx` using `react-router-dom`.
-- **Reached Milestone Component Goal:** The application now has 8 distinct, custom components meaningfully used to manage UI layout, routing, and interactive displays (`HomePage.jsx`, `RestaurantPage.jsx`, `FavoritesPage.jsx`, `AppLayout.jsx`, `AppFooter.jsx`, `RestaurantCard.jsx`, `SiteNav.jsx`, `ReviewItem.jsx`).
+## What We Changed for the Final Checkpoint
+- **New Pages:** Added an `AboutPage.jsx` and a `NotFoundPage.jsx` (404), bringing the total to 5 fully developed pages.
+- **Component Refactoring:** Extracted the `SearchBar.jsx`, `FilterDropdown.jsx`, and `StarRating.jsx` into standalone reusable components to improve maintainability and reach the 12+ component requirement (14 total components).
+- **Design Enhancements:** Improved the visual hierarchy and separation of content by tweaking the global background color and increasing the box-shadows on cards to make them pop more.
+- **Accessibility Fixes:** 
+  - Restructured heading hierarchies across all pages to ensure no skipped heading levels (e.g. `h1` followed by `h2`).
+  - Added descriptive `alt` text to all `RestaurantCard` images.
+  - Provided `aria-label`s to interactable buttons (like the favorite heart toggle and star rating buttons).
+  - Ensured all forms and input elements are properly associated with `<label>` tags or `aria-label`s.
+  - Verified color contrast meets WCAG AA standards.
+  - Maintained keyboard navigability and interactability across all inputs and interactive components.
 
 ---
 
-## How We Met the Milestone 2 Requirements
-- **Committed and Pushed to GitHub:** Handled locally and synced securely with the GitHub repository.
-- **Live on GitHub.io:** Project is built via Vite and deployed live through GitHub Pages.
+## How We Met the Final Requirements
+- **Committed and Pushed to GitHub:** All changes are tracked locally and pushed to the main repository.
+- **Live on GitHub.io:** Project is built via Vite and deployed live through GitHub Pages using the `docs` folder.
 - **React Bootstrap Integration:** We use React-Bootstrap thoroughly for `Navbar`, interactive forms, inputs, Buttons, and Layout grids (`Container`, `Row`, `Col`).
-- **Primary Navigation Bar:** Maintained and enhanced a sticky top-bar with active navigation linking using React Router.
-- **At Least 3 Pages:** The site now has 3 fully developed pages: Home Page, Restaurant Details Page, and the Favorites Page.
-- **At Least 8 Components:** Developed and integrated exactly 8 structural and UI React components.
-- **Meaningfully Interactable Portion Begun:** Users can interact to filter lists, save places to their favorites via LocalStorage, and submit custom reviews that dynamically populate the page without refreshing.
+- **Primary Navigation Bar:** Maintained and enhanced a sticky top-bar with active navigation linking using React Router. Includes links to Home, Favorites, and About.
+- **At Least 3 Pages:** The site now has 5 fully developed pages: Home Page, Restaurant Details Page, Favorites Page, About Page, and a 404 Not Found Page.
+- **At Least 12 Components:** Developed and integrated exactly 14 structural and UI React components (`App`, `AppLayout`, `SiteNav`, `AppFooter`, `HomePage`, `RestaurantPage`, `FavoritesPage`, `AboutPage`, `NotFoundPage`, `RestaurantCard`, `ReviewItem`, `SearchBar`, `FilterDropdown`, `StarRating`).
+- **Meaningfully Interactable Portion:** Users can interact to filter lists, save places to their favorites via LocalStorage, rate places, and submit custom reviews that dynamically populate the page.
+- **Thoughtful Design Principles:** Utilizes CSS variables, consistent color theming, hover micro-animations, and adequate spacing for a clean, modern look.
+- **Accessible:** No skipped heading levels, appropriate alt text on images, sufficient color contrast, properly labeled inputs, and forms are fully completable via keyboard.
 
 ---
 
