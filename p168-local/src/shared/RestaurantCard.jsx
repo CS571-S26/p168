@@ -23,7 +23,7 @@ export default function RestaurantCard({ restaurant }) {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            toggleFavorite(restaurant.id);
+            toggleFavorite(restaurant.id, restaurant.name);
           }}
         >
           {isFav ? '♥' : '♡'}

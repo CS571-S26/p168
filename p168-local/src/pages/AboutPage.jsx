@@ -17,6 +17,15 @@ export default function AboutPage() {
                 Campus Food Finder was created to help students and staff find the best dining options around the university. We know how hard it can be to decide where to eat between classes, so we built this platform to make it easy to discover new places, read reviews, and save your favorites.
               </p>
               
+              <h2 className="fw-bold mb-4 h3 mt-5">Key Features</h2>
+              <ul className="fs-5 text-secondary mb-4" style={{ lineHeight: '1.8' }}>
+                <li><strong>Search & Filter:</strong> Instantly find restaurants by name, location, cuisine, or price.</li>
+                <li><strong>Dynamic Sorting:</strong> Organize lists exactly how you want.</li>
+                <li><strong>Favorites System:</strong> Save places you love and access them instantly.</li>
+                <li><strong>Live Reviews:</strong> Share your experiences and read feedback from peers in real-time.</li>
+                <li><strong>Surprise Me!:</strong> Can't decide? Let our random picker choose your next meal.</li>
+              </ul>
+              
               <h2 className="fw-bold mb-4 h3 mt-5">Contact Us</h2>
               <p className="fs-5 text-secondary" style={{ lineHeight: '1.8' }}>
                 Have questions or suggestions? We'd love to hear from you! Reach out to our team at <a href="mailto:support@campusfoodfinder.edu" className="text-decoration-none">support@campusfoodfinder.edu</a>.

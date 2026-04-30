@@ -66,7 +66,7 @@ export default function RestaurantPage() {
               <div className="text-success fs-3 fw-bold mb-2">{restaurant.priceRange}</div>
               <Button 
                 variant={isFav ? "danger" : "outline-danger"} 
-                onClick={() => toggleFavorite(restaurant.id)}
+                onClick={() => toggleFavorite(restaurant.id, restaurant.name)}
                 className="rounded-pill px-4 fw-bold shadow-sm"
               >
                 {isFav ? '♥ Saved' : '♡ Save to Favorites'}

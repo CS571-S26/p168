@@ -9,6 +9,7 @@ export function useAppContext() {
 export function AppProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
   const [reviews, setReviews] = useState({});
+  const [toastConfig, setToastConfig] = useState({ show: false, message: '', variant: 'success' });
 
   // Load from local storage initially
   useEffect(() => {
@@ -24,11 +25,19 @@ export function AppProvider({ children }) {
     localStorage.setItem('cff-reviews', JSON.stringify(reviews));
   }, [favorites, reviews]);
 
-  const toggleFavorite = (restId) => {
+  const showToastMessage = (message, variant = 'success') => {
+    setToastConfig({ show: true, message, variant });
+  };
+
+  const hideToast = () => setToastConfig(prev => ({ ...prev, show: false }));
+
+  const toggleFavorite = (restId, restName = 'Restaurant') => {
     setFavorites(prev => {
       if (prev.includes(restId)) {
+        showToastMessage(`Removed ${restName} from favorites!`, 'warning');
         return prev.filter(id => id !== restId);
       } else {
+        showToastMessage(`Added ${restName} to favorites!`, 'success');
         return [...prev, restId];
       }
     });
@@ -42,10 +51,15 @@ export function AppProvider({ children }) {
         [restId]: [...restReviews, { ...review, id: Date.now() }]
       };
     });
+    showToastMessage('Review submitted successfully!', 'primary');
   };
 
   return (
-    <AppContext.Provider value={{ favorites, toggleFavorite, reviews, addReview }}>
+    <AppContext.Provider value={{ 
+      favorites, toggleFavorite, 
+      reviews, addReview, 
+      toastConfig, hideToast 
+    }}>
       {children}
     </AppContext.Provider>
   );
